@@ -15,7 +15,7 @@ const cellStyles = `
 
 const QuizGrid = () => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700">
+    <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-blue-900 to-blue-700">
       {/* Griglia principale con meno spazio tra le celle */}
       <div className="grid grid-cols-5 grid-rows-[0.5fr_1fr_1fr_1fr_1fr_1fr] w-full h-full gap-1 p-2">
         
