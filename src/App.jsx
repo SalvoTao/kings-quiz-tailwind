@@ -2,12 +2,14 @@ import { useState } from "react";
 import QuizGrid from "./components/QuizGrid";
 import PlayerBox from "./components/PlayerBox";
 import GameSetupPopup from "./components/GameSetupPopup";
+import QuestionPopup from "./components/QuestionPopup";
 
 function App() {
   const [scores, setScores] = useState([]);
   const [gameStarted, setGameStarted] = useState(false);
   const [numPlayers, setNumPlayers] = useState(3);
   const [categories, setCategories] = useState([]);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   // Funzione per avviare il gioco con il numero corretto di giocatori
   const startGame = (players, selectedCategories) => {
@@ -30,8 +32,11 @@ function App() {
 
       {/* Griglia */}
       <div className="flex-grow overflow-hidden">
-        <QuizGrid />
+        <QuizGrid onCellClick={setSelectedQuestion} />
       </div>
+
+      {/* Popup della domanda */}
+      <QuestionPopup question={selectedQuestion} onClose={() => setSelectedQuestion(null)} />
 
       {/* Footer con giocatori dinamici */}
       <footer className="w-full bg-gray-100 p-2 sm:p-4 flex flex-wrap justify-center gap-4 border-t shadow-md">
