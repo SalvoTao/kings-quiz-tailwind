@@ -32,7 +32,7 @@ function App() {
 
       {/* Griglia */}
       <div className="flex-grow overflow-hidden">
-        <QuizGrid onCellClick={setSelectedQuestion} />
+        <QuizGrid onCellClick={setSelectedQuestion} selectedCategories={categories} />
       </div>
 
       {/* Popup della domanda */}
