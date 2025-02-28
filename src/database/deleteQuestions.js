@@ -4,7 +4,7 @@ import { collection, query, where, getDocs, deleteDoc, doc } from "firebase/fire
 const deleteMathQuestions = async () => {
   try {
     // 1️⃣ Creiamo una query per trovare tutte le domande di una categoria
-    const q = query(collection(db, "domande"), where("categoria", "==", "Matematica"), where("punteggio", "==", 100));
+    const q = query(collection(db, "domande"), where("categoria", "==", "Matematica"), where("punteggio", "==", 300));
     const querySnapshot = await getDocs(q);
 
     // 2️⃣ Cancella ogni documento trovato

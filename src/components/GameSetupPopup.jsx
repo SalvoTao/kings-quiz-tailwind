@@ -6,9 +6,8 @@ const GameSetupPopup = ({ onStartGame }) => {
   const minCategories = 5;
 
   const categories = [
-    "Sport", "Scienza", "Geografia", "Storia", "Cinema",
-    "Musica", "Tecnologia", "Matematica", "Astronomia",
-    "Anime/Manga", "YouTube", "Twitch"
+    "Calcio", "Geografia", "Storia", "Cinema", "Musica", 
+    "Informatica", "Matematica", "Anime/Manga", "Logica", "Patente"
   ];
 
   const toggleCategory = (category) => {
