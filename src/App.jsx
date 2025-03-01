@@ -20,7 +20,7 @@ function App() {
     setGameStarted(true);
   };
 
-  // Funzione per aggiornare il punteggio in base alla risposta
+  // Funzione per aggiornare il punteggio e cambiare turno
   const handleAnswer = (isCorrect) => {
     setScores((prevScores) => {
       const updatedScores = [...prevScores];
@@ -33,7 +33,9 @@ function App() {
     });
 
     setSelectedQuestion(null); // Chiude il popup dopo la risposta
-    setCurrentPlayer((prev) => (prev + 1) % numPlayers); // Passa al prossimo giocatore
+
+    // Passa il turno al prossimo giocatore
+    setCurrentPlayer((prev) => (prev + 1) % numPlayers);
   };
 
   // Trova il leader (chi ha il punteggio massimo)
@@ -60,6 +62,7 @@ function App() {
             key={index}
             score={score}
             isLeader={index === leaderIndex}
+            isActive={index === currentPlayer} // Passiamo lo stato del turno
             updateScore={(newScore) => {
               const updatedScores = [...scores];
               updatedScores[index] = newScore;
